@@ -1,0 +1,144 @@
+.course-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
+
+/* HERO SECTION */
+
+.course-hero {
+  background: linear-gradient(135deg, #ff7a00, #ff9f43);
+  color: white;
+  padding: 40px;
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.course-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.course-hero h1 {
+  margin: 15px 0;
+  font-size: 2.5rem;
+}
+
+.course-hero p {
+  max-width: 600px;
+  opacity: 0.9;
+}
+
+.course-stats {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  min-width: 180px;
+}
+
+.course-stats h2 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.course-stats span {
+  opacity: 0.9;
+}
+
+/* MODULES SECTION */
+
+.modules-section {
+  margin-top: 20px;
+}
+
+.section-header {
+  margin-bottom: 25px;
+}
+
+.section-header h2 {
+  color: #111827;
+  margin-bottom: 5px;
+}
+
+.section-header p {
+  color: #6b7280;
+}
+
+/* MODULE GRID */
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.module-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.module-card:hover {
+  transform: translateY(-4px);
+  border-color: #ff7a00;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.module-number {
+  width: 55px;
+  height: 55px;
+  background: #fff7ed;
+  color: #ff7a00;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.module-content {
+  flex: 1;
+}
+
+.module-content h3 {
+  color: #111827;
+  margin-bottom: 5px;
+}
+
+.module-content p {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.module-arrow {
+  font-size: 1.5rem;
+  color: #ff7a00;
+}
+
+@media (max-width: 768px) {
+  .course-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .course-hero h1 {
+    font-size: 2rem;
+  }
+
+  .course-page {
+    padding: 20px;
+  }
+}
