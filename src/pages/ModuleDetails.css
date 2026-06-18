@@ -46,9 +46,11 @@
   color: #111827;
 }
 
-.lesson-grid {
-  display: grid;
-  gap: 20px;
+.lesson-card {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
 }
 
 .lesson-card {

@@ -1,26 +1,31 @@
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, NavLink, Navigate } from "react-router-dom";
 import data from "../services/user.json";
 import { Header } from "../components/Header";
+import { getCurrentUser } from "../Utilities/auth";
 import "./CourseDetail.css";
 
 export function CourseDetail() {
+  const currentUser = getCurrentUser();
+
+  console.log(currentUser);
+  
+  if (!currentUser) {
+    return <Navigate to="/login" />;
+  }
+
   const { id } = useParams();
 
-  const course = data.courses.find(
-    (course) => course.id === Number(id)
-  );
+  const course = data.courses.find((course) => course.id === Number(id));
 
   if (!course) {
     return <h2>Course not found</h2>;
   }
   const modules = data.modules.filter(
-    (module) => module.courseId === course.id
+    (module) => module.courseId === course.id,
   );
 
   return (
     <>
-      <Header />
-
       <div className="course-page">
         <section className="course-hero">
           <div>

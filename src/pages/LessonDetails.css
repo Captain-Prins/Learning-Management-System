@@ -1,0 +1,45 @@
+/* Container styling */
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+/* Button row */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.controls button {
+  padding: 8px 14px;
+  border: none;
+  background-color: #ff7a00;
+  color: white;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* Hover effect */
+.controls button:hover {
+  background-color: #f5b171;
+  color: black;
+}
+
+/* Center the middle button */
+.controls button:nth-child(2) {
+  margin: 0 auto;
+}
+
+/* Video styling */
+video {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}

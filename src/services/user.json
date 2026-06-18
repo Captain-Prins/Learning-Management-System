@@ -90,87 +90,150 @@
       "title": "System Integration"
     }
   ],
-
-  "lessons": [
-    {
-      "id": 1,
-      "moduleId": 1,
-      "title": "What is Programming?"
-    },
-    {
-      "id": 2,
-      "moduleId": 1,
-      "title": "Programming Languages"
-    },
-    {
-      "id": 3,
-      "moduleId": 2,
-      "title": "Variables"
-    },
-    {
-      "id": 4,
-      "moduleId": 2,
-      "title": "Primitive Data Types"
-    },
-    {
-      "id": 5,
-      "moduleId": 3,
-      "title": "Introduction to Arrays"
-    },
-    {
-      "id": 6,
-      "moduleId": 3,
-      "title": "Linked List Operations"
-    },
-    {
-      "id": 7,
-      "moduleId": 4,
-      "title": "Bubble Sort"
-    },
-    {
-      "id": 8,
-      "moduleId": 4,
-      "title": "Selection Sort"
-    },
-    {
-      "id": 9,
-      "moduleId": 5,
-      "title": "HTML Document Structure"
-    },
-    {
-      "id": 10,
-      "moduleId": 5,
-      "title": "HTML Elements"
-    },
-    {
-      "id": 11,
-      "moduleId": 6,
-      "title": "Selectors and Properties"
-    },
-    {
-      "id": 12,
-      "moduleId": 6,
-      "title": "Box Model"
-    },
-    {
-      "id": 13,
-      "moduleId": 7,
-      "title": "Requirements Gathering"
-    },
-    {
-      "id": 14,
-      "moduleId": 7,
-      "title": "Use Case Diagrams"
-    },
-    {
-      "id": 15,
-      "moduleId": 8,
-      "title": "API Integration"
-    },
-    {
-      "id": 16,
-      "moduleId": 8,
-      "title": "System Deployment"
-    }
-  ]
+"lessons": [
+  {
+    "id": 1,
+    "moduleId": 1,
+    "title": "What is Programming?",
+    "content": [
+      "Programming is the process of creating instructions that tell a computer how to perform tasks.",
+      "Programs are written using programming languages such as Java, Python, and JavaScript."
+    ]
+  },
+  {
+    "id": 2,
+    "moduleId": 1,
+    "title": "Programming Languages",
+    "content": [
+      "Programming languages provide a way for developers to communicate with computers.",
+      "Different languages are designed for different purposes such as web development, mobile apps, and data analysis."
+    ]
+  },
+  {
+    "id": 3,
+    "moduleId": 2,
+    "title": "Variables",
+    "content": [
+      "Variables are named storage locations used to hold data values in memory.",
+      "A variable can store different types of data such as numbers, text, and boolean values."
+    ]
+  },
+  {
+    "id": 4,
+    "moduleId": 2,
+    "title": "Primitive Data Types",
+    "content": [
+      "Primitive data types are the basic building blocks of data in Java.",
+      "Examples include int, double, char, and boolean."
+    ]
+  },
+  {
+    "id": 5,
+    "moduleId": 3,
+    "title": "Introduction to Arrays",
+    "content": [
+      "An array is a collection of elements stored in contiguous memory locations.",
+      "Arrays allow multiple values of the same type to be stored under a single variable name."
+    ]
+  },
+  {
+    "id": 6,
+    "moduleId": 3,
+    "title": "Linked List Operations",
+    "content": [
+      "A linked list consists of nodes where each node points to the next node.",
+      "Common operations include insertion, deletion, traversal, and searching."
+    ]
+  },
+  {
+    "id": 7,
+    "moduleId": 4,
+    "title": "Bubble Sort",
+    "content": [
+      "Bubble Sort repeatedly compares adjacent elements and swaps them when necessary.",
+      "The algorithm continues until the entire list is sorted."
+    ]
+  },
+  {
+    "id": 8,
+    "moduleId": 4,
+    "title": "Selection Sort",
+    "content": [
+      "Selection Sort repeatedly finds the smallest element and places it in its correct position.",
+      "The algorithm divides the list into sorted and unsorted portions."
+    ]
+  },
+  {
+    "id": 9,
+    "moduleId": 5,
+    "title": "HTML Document Structure",
+    "content": [
+      "Every HTML document begins with a DOCTYPE declaration followed by html, head, and body tags.",
+      "The structure helps browsers correctly render web pages."
+    ]
+  },
+  {
+    "id": 10,
+    "moduleId": 5,
+    "title": "HTML Elements",
+    "content": [
+      "HTML elements are the building blocks of web pages.",
+      "Examples include headings, paragraphs, links, images, and tables."
+    ]
+  },
+  {
+    "id": 11,
+    "moduleId": 6,
+    "title": "Selectors and Properties",
+    "content": [
+      "CSS selectors target HTML elements that should receive specific styles.",
+      "Properties such as color, font-size, and margin define the appearance of elements."
+    ]
+  },
+  {
+    "id": 12,
+    "moduleId": 6,
+    "title": "Box Model",
+    "content": [
+      "The CSS box model consists of content, padding, border, and margin.",
+      "Understanding the box model is essential for creating proper layouts."
+    ]
+  },
+  {
+    "id": 13,
+    "moduleId": 7,
+    "title": "Requirements Gathering",
+    "content": [
+      "Requirements gathering is the process of collecting information from stakeholders.",
+      "The goal is to understand the needs and expectations of the system."
+    ]
+  },
+  {
+    "id": 14,
+    "moduleId": 7,
+    "title": "Use Case Diagrams",
+    "content": [
+      "Use case diagrams visualize interactions between users and a system.",
+      "They help identify system functionality from the user's perspective."
+    ]
+  },
+  {
+    "id": 15,
+    "moduleId": 8,
+    "title": "API Integration",
+    "content": [
+      "API integration allows different systems to communicate and exchange data.",
+      "Developers use endpoints to send requests and receive responses."
+    ]
+  },
+  {
+    "id": 16,
+    "moduleId": 8,
+    "title": "System Deployment",
+    "content": [
+      "System deployment is the process of making an application available to users.",
+      "Deployment often includes server configuration, testing, and monitoring."
+    ]
+  }
+]
 }

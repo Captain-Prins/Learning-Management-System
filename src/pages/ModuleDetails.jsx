@@ -1,10 +1,14 @@
 import { Header } from "../components/Header";
 import { useParams } from "react-router-dom";
 import data from "../services/user.json";
-import { NavLink } from "react-router-dom";
-import "./ModuleLesson.css"
-export function ModuleLesson() {
-
+import { getCurrentUser } from "../Utilities/auth";
+import { NavLink, Navigate } from "react-router-dom";
+import "./ModuleDetails.css";
+export function ModuleDetails() {
+  const currentUser = getCurrentUser();
+  if (!currentUser) {
+    return <Navigate to="/login" />;
+  }
   const { courseId, moduleId } = useParams();
 
   const currentModule = data.modules.find(
@@ -12,8 +16,8 @@ export function ModuleLesson() {
   );
 
   const lessons = data.lessons.filter(
-  (lesson) => lesson.moduleId === Number(moduleId)
-);
+    (lesson) => lesson.moduleId === Number(moduleId),
+  );
 
   if (!currentModule) {
     return <h2>Module not found</h2>;
@@ -21,29 +25,25 @@ export function ModuleLesson() {
 
   return (
     <>
-     <Header />
-
       <div className="module-page">
         <section className="module-hero">
           <span className="module-badge">Module</span>
 
           <h1>{currentModule.title}</h1>
 
-          <p>
-            Complete the lessons below to finish this module.
-          </p>
+          <p>Complete the lessons below to finish this module.</p>
 
-          <div className="module-stat">
-            {lessons.length} Lessons
-          </div>
+          <div className="module-stat">{lessons.length} Lessons</div>
         </section>
 
         <section className="lesson-section">
-          <h2>Lessons</h2>
-
           <div className="lesson-grid">
             {lessons.map((lesson, index) => (
-              <div key={lesson.id} className="lesson-card">
+              <NavLink
+                key={lesson.id}
+                className="lesson-card"
+                to={`/courses/${courseId}/modules/${moduleId}/lesson/${lesson.id}`}
+              >
                 <div className="lesson-number">
                   {String(index + 1).padStart(2, "0")}
                 </div>
@@ -53,10 +53,8 @@ export function ModuleLesson() {
                   <p>Start this lesson</p>
                 </div>
 
-                {/* <div className="lesson-arrow">
-                  →
-                </div> */}
-              </div>
+                <div className="lesson-arrow">→</div>
+              </NavLink>
             ))}
           </div>
         </section>

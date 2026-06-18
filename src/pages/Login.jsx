@@ -26,7 +26,7 @@ export function Login() {
 
   return (
     <>
-      <Header />
+  
 
       <div className="login-container">
         <h2>Login</h2>

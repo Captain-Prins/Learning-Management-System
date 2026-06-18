@@ -12,13 +12,11 @@ export function Dashboard() {
   }
 
   const userCourses = data.courses.filter((course) =>
-    currentUser.enrolledCourses.includes(course.id)
+    currentUser.enrolledCourses.includes(course.id),
   );
 
   return (
     <>
-      <Header />
-
       <div className="dashboard-container">
         <div className="dashboard-hero">
           <div>
@@ -56,10 +54,7 @@ export function Dashboard() {
             <ul className="course-list">
               {userCourses.map((course) => (
                 <li key={course.id}>
-                  <NavLink
-                    className="course-link"
-                    to={`/courses/${course.id}`}
-                  >
+                  <NavLink className="course-link" to={`/courses/${course.id}`}>
                     <div>
                       <h4>{course.title}</h4>
                       <p>Open Course</p>
