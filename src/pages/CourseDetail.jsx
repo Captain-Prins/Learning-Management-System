@@ -1,28 +1,60 @@
+import { useEffect, useState } from "react";
 import { useParams, NavLink, Navigate } from "react-router-dom";
-import data from "../services/user.json";
-import { Header } from "../components/Header";
+import axios from "axios";
+
 import { getCurrentUser } from "../Utilities/auth";
 import "./CourseDetail.css";
 
 export function CourseDetail() {
+  const { id } = useParams();
   const currentUser = getCurrentUser();
 
-  console.log(currentUser);
-  
+  const [course, setCourse] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    async function fetchCourse() {
+      try {
+        setLoading(true);
+        setError("");
+
+        const response = await axios.get(
+          `http://localhost:3000/api/courses/${id}`
+        );
+
+        setCourse(response.data);
+      } catch (error) {
+        console.error(error);
+
+        if (error.response?.status === 404) {
+          setError("Course not found");
+        } else {
+          setError("Unable to load course");
+        }
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    if (currentUser) {
+      fetchCourse();
+    }
+  }, [id ]);
+
   if (!currentUser) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/login" replace />;
   }
 
-  const { id } = useParams();
-
-  const course = data.courses.find((course) => course.id === Number(id));
-
-  if (!course) {
-    return <h2>Course not found</h2>;
+  if (loading) {
+    return <h2>Loading course...</h2>;
   }
-  const modules = data.modules.filter(
-    (module) => module.courseId === course.id,
-  );
+
+  if (error) {
+    return <h2>{error}</h2>;
+  }
+
+  const modules = course.modules ?? [];
 
   return (
     <>
@@ -49,24 +81,28 @@ export function CourseDetail() {
           </div>
 
           <div className="module-grid">
-            {modules.map((module, index) => (
-              <NavLink
-                key={module.id}
-                className="module-card"
-                to={`/courses/${id}/modules/${module.id}`}
-              >
-                <div className="module-number">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
+            {modules.length === 0 ? (
+              <p>No modules available.</p>
+            ) : (
+              modules.map((module, index) => (
+                <NavLink
+                  key={module.id}
+                  className="module-card"
+                  to={`/courses/${course.id}/modules/${module.id}`}
+                >
+                  <div className="module-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
 
-                <div className="module-content">
-                  <h3>{module.title}</h3>
-                  <p>Open module and start learning.</p>
-                </div>
+                  <div className="module-content">
+                    <h3>{module.title}</h3>
+                    <p>Open module and start learning.</p>
+                  </div>
 
-                <div className="module-arrow">→</div>
-              </NavLink>
-            ))}
+                  <div className="module-arrow">→</div>
+                </NavLink>
+              ))
+            )}
           </div>
         </section>
       </div>
